@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request";
 
 import { drawsQuery } from "./querys/draws";
-import { Draw } from '@/interfaces';
+import { Draw } from "@/interfaces";
 
 const client = new GraphQLClient("http://localhost:8010/proxy/graphql");
 

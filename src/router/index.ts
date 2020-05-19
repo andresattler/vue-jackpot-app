@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
+import Jackpot from "@/views/Jackpot.vue";
 
 Vue.use(VueRouter);
 
@@ -13,8 +14,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/jackpot",
     name: "Jackpot",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: Jackpot
   }
 ];
 

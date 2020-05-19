@@ -2,20 +2,16 @@ import Vue from "vue";
 import Vuex, { MutationTree, ActionTree, GetterTree } from "vuex";
 
 import { fetchDraws } from "@/api/client";
-import { Draw } from '@/interfaces';
+import { Draw } from "@/interfaces";
 
 Vue.use(Vuex);
 
 interface State {
-  jackpotDraw: Draw;
+  jackpotDraw: Draw | undefined;
 }
 
 const state: State = {
-  jackpotDraw: {
-    date: "",
-    jackpot: 0,
-    numbers: []
-  }
+  jackpotDraw: undefined
 };
 
 const mutations: MutationTree<State> = {
@@ -24,7 +20,7 @@ const mutations: MutationTree<State> = {
   }
 };
 
-const actions: ActionTree<State, any> = {
+const actions: ActionTree<State, unknown> = {
   getJackpotDrawData: async context => {
     const data = await fetchDraws();
     // TODO how can the committed mutations be typed to match the mutation types
@@ -32,8 +28,8 @@ const actions: ActionTree<State, any> = {
   }
 };
 
-const getters: GetterTree<State, any> = {
-  jackpotDraw: ({ jackpotDraw }) => jackpotDraw, 
+const getters: GetterTree<State, unknown> = {
+  jackpotDraw: ({ jackpotDraw }) => jackpotDraw
 };
 
 export default new Vuex.Store({
