@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class DrawNumbers extends Vue {
@@ -16,7 +16,7 @@ export default class DrawNumbers extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "src/style/mixins.scss";
+@import 'src/style/mixins.scss';
 $number-size: 50px;
 
 .numbers-container {

@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import JakpotDraw from "@/components/JakpotDraw.vue";
+import JakpotDraw from '@/components/JakpotDraw.vue';
 
 export default {
-  name: "Jackpot",
+  name: 'Jackpot',
   components: {
     JakpotDraw
   }
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/style/mixins.scss";
+@import 'src/style/mixins.scss';
 
 .draw-card {
   display: flex;

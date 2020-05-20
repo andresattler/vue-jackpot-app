@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "src/style/mixins.scss";
+@import 'src/style/mixins.scss';
 
 .home {
   display: flex;

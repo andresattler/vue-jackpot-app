@@ -9,8 +9,8 @@
 </template>
 
 <style lang="scss">
-@import "src/style/mixins.scss";
-@import "reset-css";
+@import 'src/style/mixins.scss';
+@import 'reset-css';
 
 $header-height: 35px;
 

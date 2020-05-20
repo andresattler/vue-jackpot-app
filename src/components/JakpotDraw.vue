@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { Getter, Action } from "vuex-class";
-import millify from "millify";
+import { Component, Vue } from 'vue-property-decorator';
+import { Getter, Action } from 'vuex-class';
+import millify from 'millify';
 
-import DrawNumbers from "@/components/DrawNumbers.vue";
-import { Draw } from "../interfaces";
+import DrawNumbers from '@/components/DrawNumbers.vue';
+import { Draw } from '../interfaces';
 
 @Component({
   components: {
@@ -26,7 +26,7 @@ export default class JakpotDraw extends Vue {
   @Action getJackpotDrawData!: () => void;
   get jackpotAmount() {
     return millify(this.jackpotDraw.jackpot, {
-      units: ["", "", " Mio", "Billion", "Trillion"]
+      units: ['', '', ' Mio', 'Billion', 'Trillion']
     });
   }
   created() {

@@ -4,9 +4,9 @@ import { exampleDraw } from '@/fixtures/draw';
 describe('mutations', () => {
   it('addJackpotDraw', () => {
     const state: State = {
-      jackpotDraw: undefined,
+      jackpotDraw: undefined
     };
     mutations.addJackpotDraw(state, exampleDraw);
-    expect(state.jackpotDraw).toBe(exampleDraw)
-  })
-})
+    expect(state.jackpotDraw).toBe(exampleDraw);
+  });
+});

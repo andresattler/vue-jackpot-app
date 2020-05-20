@@ -1,8 +1,8 @@
-import Vue from "vue";
-import Vuex, { MutationTree, ActionTree, GetterTree } from "vuex";
+import Vue from 'vue';
+import Vuex, { MutationTree, ActionTree, GetterTree } from 'vuex';
 
-import { fetchDraws } from "@/api/client";
-import { Draw } from "@/interfaces";
+import { fetchDraws } from '@/api/client';
+import { Draw } from '@/interfaces';
 
 Vue.use(Vuex);
 
@@ -24,7 +24,7 @@ const actions: ActionTree<State, unknown> = {
   getJackpotDrawData: async context => {
     const data = await fetchDraws();
     // TODO how can the committed mutations be typed to match the actual mutation types
-    context.commit("addJackpotDraw", data[0]);
+    context.commit('addJackpotDraw', data[0]);
   }
 };
 
