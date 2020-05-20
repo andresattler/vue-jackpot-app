@@ -1,13 +1,17 @@
-# jackpot-app
+![](https://img.shields.io/badge/vue-2.x-brightgreen.svg)
+# Vue-jackpot-app
+A small Lotto app written in Vue.js + Typescript and using Graphql.
+Written as part of a code challenge and out of personal interes to get familiar with the concepts of Vue  
+and t get in touch with Graphql
 
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Run the development server which includes a proxy to access the graphql endpoint
 ```
-yarn serve
+yarn dev
 ```
 
 ### Compiles and minifies for production
@@ -15,15 +19,12 @@ yarn serve
 yarn build
 ```
 
-### Run your unit tests
+### Run your tests
 ```
-yarn test:unit
+yarn test
 ```
 
 ### Lints and fixes files
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
