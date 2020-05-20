@@ -8,6 +8,7 @@
     "dev": "run-p cors:proxy serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test": "run-s test:*",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

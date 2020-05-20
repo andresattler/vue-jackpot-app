@@ -6,7 +6,7 @@ import { Draw } from "@/interfaces";
 
 Vue.use(Vuex);
 
-interface State {
+export interface State {
   jackpotDraw: Draw | undefined;
 }
 
@@ -14,7 +14,7 @@ const state: State = {
   jackpotDraw: undefined
 };
 
-const mutations: MutationTree<State> = {
+export const mutations: MutationTree<State> = {
   addJackpotDraw: (state, jackpotDraw: Draw) => {
     state.jackpotDraw = jackpotDraw;
   }
@@ -23,7 +23,7 @@ const mutations: MutationTree<State> = {
 const actions: ActionTree<State, unknown> = {
   getJackpotDrawData: async context => {
     const data = await fetchDraws();
-    // TODO how can the committed mutations be typed to match the mutation types
+    // TODO how can the committed mutations be typed to match the actual mutation types
     context.commit("addJackpotDraw", data[0]);
   }
 };
