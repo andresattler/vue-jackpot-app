@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/vue-2.x-brightgreen.svg)
 # Vue-jackpot-app
 A small Lotto app written in Vue.js + Typescript and using Graphql.
-Written as part of a code challenge and out of personal interes to get familiar with the concepts of Vue  
-and t get in touch with Graphql
+Written as part of a code challenge and out of personal interest to get familiar with the concepts of Vue  
+and to get in touch with Graphql
 
 ## Project setup
 ```
