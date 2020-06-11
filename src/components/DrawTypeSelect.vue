@@ -1,6 +1,6 @@
 <template>
   <div class="select-container">
-    <select @change="onSelect" name="" id="">
+    <select @change="onSelect" :value="viewedDrawType">
       <option v-for="drawType in drawTypes" :value="drawType" :key="drawType">{{
         drawType
       }}</option>
@@ -10,6 +10,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
+
 import { DrawTypes } from '@/interfaces';
 
 type ChangeEvent<T extends string> = {
@@ -20,6 +22,7 @@ type ChangeEvent<T extends string> = {
 
 @Component
 export default class DrawTypeSelect extends Vue {
+  @Getter viewedDrawType!: DrawTypes;
   drawTypes = Object.values(DrawTypes);
   onSelect(e: ChangeEvent<DrawTypes>) {
     this.$store.commit('setViewedDrawType', e.target.value);
