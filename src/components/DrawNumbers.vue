@@ -21,8 +21,7 @@ $number-size: 50px;
 
 .numbers-container {
   display: flex;
-  width: 5 * ($number-size + 10px);
-  justify-content: space-between;
+  justify-content: center;
   margin: 8px 0;
 }
 .number {
@@ -35,5 +34,6 @@ $number-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 8px;
 }
 </style>

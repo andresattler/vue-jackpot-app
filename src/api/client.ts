@@ -1,7 +1,7 @@
 import { GraphQLClient } from 'graphql-request';
 
 import { drawsQuery } from './querys/draws';
-import { Draw } from '@/interfaces';
+import { Draw, DrawTypes } from '@/interfaces';
 
 const client = new GraphQLClient('http://localhost:8010/proxy/graphql');
 
@@ -12,5 +12,7 @@ interface DrawsResponse {
   };
 }
 
-export const fetchDraws = () =>
-  client.request(drawsQuery).then((data: DrawsResponse) => data.draw.draws);
+export const fetchDraws = (type: DrawTypes) =>
+  client
+    .request(drawsQuery, { type })
+    .then((data: DrawsResponse) => data.draw.draws);

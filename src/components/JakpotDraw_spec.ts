@@ -7,7 +7,7 @@ describe('DrawNumbers', () => {
     const wrapper = shallowMount(DrawNumbers, {
       // TODO can props be props typed?
       propsData: {
-        numbers: exampleDraw.numbers.length
+        numbers: exampleDraw.numbers
       }
     });
 

@@ -1,20 +1,21 @@
 <template>
   <div v-if="jackpotDraw" class="draw-container">
-    <h1>Eurojackpot</h1>
+    <h1>{{ viewedDrawType }}</h1>
     <h2>currently at: {{ jackpotAmount }} €</h2>
     <p class="info">And the numbers are:</p>
     <DrawNumbers v-bind:numbers="jackpotDraw.numbers" />
+    <DrawNumbers v-bind:numbers="jackpotDraw.additionalNumbers" />
     <p class="date">From: {{ jackpotDraw.date }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 import millify from 'millify';
 
 import DrawNumbers from '@/components/DrawNumbers.vue';
-import { Draw } from '../interfaces';
+import { Draw, DrawTypes } from '../interfaces';
 
 @Component({
   components: {
@@ -23,14 +24,16 @@ import { Draw } from '../interfaces';
 })
 export default class JakpotDraw extends Vue {
   @Getter jackpotDraw!: Draw;
-  @Action getJackpotDrawData!: () => void;
+  @Getter viewedDrawType!: DrawTypes;
+  @Action getJackpotDrawData!: (type: DrawTypes) => void;
   get jackpotAmount() {
     return millify(this.jackpotDraw.jackpot, {
       units: ['', '', ' Mio', 'Billion', 'Trillion']
     });
   }
-  created() {
-    this.getJackpotDrawData();
+  @Watch('viewedDrawType', { immediate: true })
+  onViewedDrawTypeChange(viewedDrawType: DrawTypes) {
+    this.getJackpotDrawData(viewedDrawType);
   }
 }
 </script>
@@ -48,14 +51,16 @@ export default class JakpotDraw extends Vue {
   font-size: 12px;
   font-style: italic;
 }
-h1 {
-  font-weight: bold;
-  font-size: 36px;
-  margin-bottom: 4px;
-}
+h1,
 h2 {
   font-weight: bold;
-  font-size: 20px;
   margin-bottom: 4px;
+}
+h1 {
+  font-size: 36px;
+  text-transform: capitalize;
+}
+h2 {
+  font-size: 20px;
 }
 </style>

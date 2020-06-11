@@ -1,17 +1,22 @@
 <template>
-  <div class="draw-card">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <JakpotDraw />
+  <div>
+    <DrawTypeSelect />
+    <div class="draw-card">
+      <img alt="Vue logo" src="../assets/logo.png" />
+      <JakpotDraw />
+    </div>
   </div>
 </template>
 
 <script>
 import JakpotDraw from '@/components/JakpotDraw.vue';
+import DrawTypeSelect from '@/components/DrawTypeSelect.vue';
 
 export default {
   name: 'Jackpot',
   components: {
-    JakpotDraw
+    JakpotDraw,
+    DrawTypeSelect
   }
 };
 </script>
@@ -29,7 +34,6 @@ export default {
   padding: 16px;
   @include shadow;
   @include desktopBp {
-    width: 60%;
     max-width: 800px;
   }
 }
